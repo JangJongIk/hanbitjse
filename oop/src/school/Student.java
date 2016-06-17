@@ -3,6 +3,10 @@
  */
 package school;
 
+import java.text.SimpleDateFormat;
+
+import javax.swing.JOptionPane;
+
 /**
  * @date   :2016. 6. 16.
  * @author :장종익
@@ -11,7 +15,7 @@ package school;
 */
 public class Student {
 	public final static String SCHOOL_NAME = "한빛학원";
-	private String id, pw, name, regDate, gender, ssn; // ssn은 주민번호.
+	private String id, pw, name, regDate, gender, ssn;
 	private int age;
 
 	public Student(String name, String id, String pw, String ssn) {
@@ -19,9 +23,27 @@ public class Student {
 		this.id = id;
 		this.pw = pw;
 		this.ssn = ssn;
+		this.gender = null;
+		this.regDate = new SimpleDateFormat("yyyy-MM-dd").format(System.currentTimeMillis());
+		String[] arr = new String[2];
+
+		arr = ssn.split("-");
+
+		if (Integer.parseInt(arr[1]) == 0 || Integer.parseInt(arr[1]) == 9) {
+			JOptionPane.showMessageDialog(null, "뒷자리에 0이나 9는 올 수 없습니다.");
+		}
+
+		switch (Integer.parseInt(arr[1]) % 2) {
+		case 1:
+			this.gender = "남";
+			break;
+		default:
+			this.gender = "여";
+			break;
+		}
 	}
-	
-	public void setPw(String pw){
+
+	public void setPw(String pw) {
 		this.pw = pw;
 	}
 
@@ -46,15 +68,6 @@ public class Student {
 	}
 
 	public String getGender() {
-		char c = ssn.charAt(7);
-		
-		switch (c % 2) {
-		case 0:
-			gender = "여";
-			break;
-		default:
-			gender = "남";
-		}
 		return this.gender;
 	}
 

@@ -29,7 +29,7 @@ public class SchoolController {
 				break;
 			case "2":
 				JOptionPane.showMessageDialog(null, Student.SCHOOL_NAME + ", 이름 : " + st.getName() + ", 성별 : "
-						+ st.getGender() + ", ID : " + st.getId());
+						+ st.getGender() + ", ID : " + st.getId() + ", 등록날짜 : " + st.getRegDate());
 				break;
 			case "0":
 				confirm = JOptionPane.showConfirmDialog(null, "종료하시겠습니까?");
