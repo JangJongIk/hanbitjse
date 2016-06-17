@@ -5,6 +5,10 @@ package bank;
 
 import javax.swing.JOptionPane;
 
+import com.sun.org.apache.bcel.internal.Constants;
+
+import global.MyConstants;
+
 /**
  * @date   :2016. 6. 15.
  * @author :장종익
@@ -36,7 +40,7 @@ public class BankController {
 				break;
 
 			case "5":
-				JOptionPane.showMessageDialog(null, Account.BANK_NAME + ", 이름 : " + account.getName() + ", 계좌번호 : " + account.getAccountNo());
+				JOptionPane.showMessageDialog(null, MyConstants.BANK_NAME + ", 이름 : " + account.getName() + ", 계좌번호 : " + account.getAccountNo());
 				break;
 
 			default:

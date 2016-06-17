@@ -14,7 +14,6 @@ import javax.swing.JOptionPane;
  * @story  :
 */
 public class Student {
-	public final static String SCHOOL_NAME = "한빛학원";
 	private String id, pw, name, regDate, gender, ssn;
 	private int age;
 
@@ -26,7 +25,7 @@ public class Student {
 		this.gender = null;
 		this.regDate = new SimpleDateFormat("yyyy-MM-dd").format(System.currentTimeMillis());
 		String[] arr = new String[2];
-
+		
 		arr = ssn.split("-");
 
 		if (Integer.parseInt(arr[1]) == 0 || Integer.parseInt(arr[1]) == 9) {
@@ -78,4 +77,12 @@ public class Student {
 	public int getAge() {
 		return this.age;
 	}
+
+	@Override
+	public String toString() {
+		return "id=" + id + ", pw=****" + ", 이름=" + name + ", 등록일=" + regDate + ", 성별=" + gender
+				+ ", 주민번호=" + ssn + ", 나이=" + age;
+	}
+	
+	
 }

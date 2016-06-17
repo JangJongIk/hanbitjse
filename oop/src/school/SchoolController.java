@@ -7,6 +7,8 @@ import java.util.Calendar;
 
 import javax.swing.JOptionPane;
 
+import global.MyConstants;
+
 
 /**
  * @date   :2016. 6. 16.
@@ -21,15 +23,11 @@ public class SchoolController {
 		while (true) {
 			switch (JOptionPane.showInputDialog("1.등록, 2.조회, 0종료")) {
 			case "1":
-				String inputName = JOptionPane.showInputDialog("이름");
-				String inputId = JOptionPane.showInputDialog("ID");
-				String inputPw = JOptionPane.showInputDialog("비밀번호");
-				String inputSsn = JOptionPane.showInputDialog("주민등록번호  - 포함 뒷번호 첫째자리 까지만");
-				st = new Student(inputName, inputId, inputPw, inputSsn);
+				st = new Student(JOptionPane.showInputDialog("이름"), JOptionPane.showInputDialog("ID")
+						, JOptionPane.showInputDialog("비밀번호"), JOptionPane.showInputDialog("주민등록번호  - 포함 뒷번호 첫째자리 까지만"));
 				break;
 			case "2":
-				JOptionPane.showMessageDialog(null, Student.SCHOOL_NAME + ", 이름 : " + st.getName() + ", 성별 : "
-						+ st.getGender() + ", ID : " + st.getId() + ", 등록날짜 : " + st.getRegDate());
+				JOptionPane.showMessageDialog(null, MyConstants.SCHOOL_NAME + ", " + st.toString());
 				break;
 			case "0":
 				confirm = JOptionPane.showConfirmDialog(null, "종료하시겠습니까?");

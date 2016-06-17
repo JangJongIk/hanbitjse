@@ -12,7 +12,6 @@ import java.util.Random;
  * @story  :
 */
 public class Account {
-	public final static String BANK_NAME = "한빛은행";
 	private int accountNo; // 인스턴스 변수는 초기화를 하지 않는다.
 	private int money;
 	private String name;
