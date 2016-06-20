@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @file :Controller.java
  * @story :
  */
-public class Controller {
+public class Controller { 
 	public static void main(String[] args) {
 		Info info = null;
 		int confirm = 0;

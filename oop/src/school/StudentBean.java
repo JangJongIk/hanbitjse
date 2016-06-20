@@ -13,11 +13,11 @@ import javax.swing.JOptionPane;
  * @file   :Student.java
  * @story  :
 */
-public class Student {
+public class StudentBean {
 	private String id, pw, name, regDate, gender, ssn;
 	private int age;
 
-	public Student(String name, String id, String pw, String ssn) {
+	public StudentBean(String name, String id, String pw, String ssn) {
 		this.name = name;
 		this.id = id;
 		this.pw = pw;
@@ -80,7 +80,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "id=" + id + ", pw=****" + ", 이름=" + name + ", 등록일=" + regDate + ", 성별=" + gender
+		return "id=" + id + ", pw=" + pw + ", 이름=" + name + ", 등록일=" + regDate + ", 성별=" + gender
 				+ ", 주민번호=" + ssn + ", 나이=" + age;
 	}
 	
