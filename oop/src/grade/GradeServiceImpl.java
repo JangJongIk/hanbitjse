@@ -14,10 +14,9 @@ public class GradeServiceImpl implements GradeService{
 
 	@Override
 	public String calGrade() {
-		int avg = (grade.getKor() + grade.getEng() + grade.getMath()) / 3;
 		String grade;
 
-		switch (avg / 10) {
+		switch ((avgCal()) / 10) {
 		case 10: case 9:
 			grade = "A";
 			break;
