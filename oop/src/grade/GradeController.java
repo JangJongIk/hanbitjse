@@ -28,7 +28,7 @@ public class GradeController {
 	 * */
 	public static void main(String[] args) {
 		GradeService service = new GradeServiceImpl();
-		
+
 		while (true) {
 			switch (JOptionPane.showInputDialog("1.시작 0.종료")) {
 			case "1":

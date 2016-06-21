@@ -1,6 +1,6 @@
 package grade;
 
-public class GradeServiceImpl implements GradeService{
+public class GradeServiceImpl implements GradeService {
 	GradeBean grade = new GradeBean();
 
 	@Override
@@ -17,7 +17,8 @@ public class GradeServiceImpl implements GradeService{
 		String grade;
 
 		switch ((avgCal()) / 10) {
-		case 10: case 9:
+		case 10:
+		case 9:
 			grade = "A";
 			break;
 		case 8:
@@ -32,7 +33,7 @@ public class GradeServiceImpl implements GradeService{
 		case 5:
 			grade = "E";
 			break;
-		default :
+		default:
 			grade = "F";
 		}
 		return grade;
@@ -47,7 +48,7 @@ public class GradeServiceImpl implements GradeService{
 	public int totCal() {
 		return grade.getKor() + grade.getEng() + grade.getMath();
 	}
-	
+
 	public String showScore() {
 		return this.grade.toString() + ", 총점 : " + totCal() + ", 평균 : " + avgCal() + ", 학점 : " + calGrade();
 	}
