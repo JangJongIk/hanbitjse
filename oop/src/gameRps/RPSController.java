@@ -5,7 +5,6 @@ import javax.swing.JOptionPane;
 public class RPSController {
 	public static void main(String[] args) {
 		RPSService service = new RPSServiceImpl();
-		int ok = 0;
 
 		while (true) {
 			switch (JOptionPane.showInputDialog("1.계속, 2.종료")) {
@@ -23,8 +22,7 @@ public class RPSController {
 				break;
 
 			case "2":
-				ok = JOptionPane.showConfirmDialog(null, "Close?");
-				if (ok == 0) {
+				if (JOptionPane.showConfirmDialog(null, "Close?") == 0) {
 				} else {
 					continue;
 				}

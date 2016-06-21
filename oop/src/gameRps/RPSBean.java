@@ -61,6 +61,6 @@ public class RPSBean {
 
 	@Override
 	public String toString() {
-		return "결과 [플레이어=" + getPlayStr() + ", 컴퓨터=" + getCompStr() + " 결과 : " + getWin() + "]";
+		return "[플레이어=" + getPlayStr() + ", 컴퓨터=" + getCompStr() + " 결과 : " + getWin() + "]";
 	}
 }
