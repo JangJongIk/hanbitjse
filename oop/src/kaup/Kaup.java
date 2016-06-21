@@ -63,7 +63,7 @@ public class Kaup {
 	/**
 	 * 개발자님 BMI지수가 너무 길어요. 소수점 이하 2자리에서 끊어주세요.
 	 */
-	public String kaup() {
+	public String kaup() { 
 		// -------init---------
 		String result = "";
 		double height = Double.parseDouble(this.height), weight = Double.parseDouble(this.weight), kaup = 0.0;
