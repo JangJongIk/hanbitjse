@@ -41,7 +41,7 @@ public class GradeServiceImpl implements GradeService{
 
 	@Override
 	public int avgCal() {
-		return (grade.getKor() + grade.getEng() + grade.getMath()) / 3;
+		return this.totCal() / 3;
 	}
 
 	@Override
