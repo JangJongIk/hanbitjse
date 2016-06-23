@@ -11,7 +11,7 @@ public class Zigzag {
 		int[][] mtx = new int[5][5];
 		int flag = 1, k = 1, i = 0, j = 0;
 
-		for (i = 0; i < 5; i++) { // 이쪽을 만지는게 힌트
+		for (i = 0; i < 5; i++) { 
 			if (flag == 1) {
 				for (j = 0; j < 5; j++) {
 					mtx[i][j] = k;
@@ -25,11 +25,12 @@ public class Zigzag {
 					k++;
 				}
 			}
-			if (flag == 1) {
-				flag = 0;
-			} else {
-				flag = 1;// 여기를 채우시오 (flag 값 방향전환)
-			}
+			flag *= -1;
+//			if (flag == 1) {
+//				flag = 0;
+//			} else {
+//				flag = 1;// 여기를 채우시오 (flag 값 방향전환)
+//			}
 		}
 
 		for (i = 0; i < 5; i++) {
