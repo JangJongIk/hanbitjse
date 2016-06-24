@@ -23,8 +23,8 @@ public class LottoServiceImpl implements LottoService{
 		if (count < 0) {
 			this.lottos = null;
 		} else {
-			for (count = 0; count < lottos.length; count++) {
-				while (true) {
+			for (count = 0; count < lottos.length; count++) { // 1번만 돌게
+				while (true) {	
 					int num = lot.getNumber(); // 0대신 식을 채우시오
 					if (isDuplication(count, num)) { // 조건문을 채우시오
 						continue;
@@ -42,9 +42,9 @@ public class LottoServiceImpl implements LottoService{
 	}
 
 	@Override
-	public boolean isDuplication(int count, int num) {
+	public boolean isDuplication(int count, int num) {	//setLottoBall() 에서 호출
 		//  중복방지 (완성)
-		for (int i = 0; i < lottos[count].length; i++) {
+		for (int i = 0; i < lottos[count].length; i++) { // 손봐야댐
 			if (lottos[count][i] == num) {
 				return true;
 			}
@@ -59,7 +59,7 @@ public class LottoServiceImpl implements LottoService{
 	}
 	
 	@Override
-	public void sort(int[] lot) {
+	public void sort(int[] lot) {	// 한번 추첨할거니 사용 X
 		// 오름차순을 정렬 (줄단위로 해당)
 		for (int i = 0; i < lot.length - 1; i++) {
 			for (int j = 0; j < lot.length - i - 1; j++) {
@@ -75,7 +75,7 @@ public class LottoServiceImpl implements LottoService{
 	}
 
 	@Override
-	public int count(LottoBean lot) {
+	public int count(LottoBean lot) {	// 한번 추첨할꺼니 사용 X
 		// 회전수 구하기
 		return lot.getMoney() / 1000;	//1000단위 횟수 추출하도록 편집
 	}

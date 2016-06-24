@@ -16,7 +16,9 @@ import javax.swing.JOptionPane;
 public class StudentBean {
 	private String id, pw, name, regDate, gender, ssn;
 	private int age;
-
+	
+	public StudentBean() {}
+	
 	public StudentBean(String name, String id, String pw, String ssn) {
 		this.name = name;
 		this.id = id;
@@ -42,6 +44,10 @@ public class StudentBean {
 		}
 	}
 
+	public void setName(String name){
+		this.name = name;
+	}
+	
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
@@ -83,6 +89,4 @@ public class StudentBean {
 		return "id=" + id + ", pw=" + pw + ", 이름=" + name + ", 등록일=" + regDate + ", 성별=" + gender
 				+ ", 주민번호=" + ssn + ", 나이=" + age;
 	}
-	
-	
 }
