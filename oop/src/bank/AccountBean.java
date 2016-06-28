@@ -35,11 +35,21 @@ public class AccountBean {
 
 	public void setAccountNo() {
 		int rn = (int) (Math.random() * 999999) + 100000;
-		// if (rn < 1000000){
-		// this.accountNo = rn;
-		// }
+			this.accountNo = rn;
+	}
+	
+	public void setAccountNo(int accNo){
+		this.accountNo = accNo;
 	}
 
+	public void setName(String name){
+		this.name = name;
+	}
+	
+	public void setId(String id){
+		this.id = id;
+	}
+	
 	public void setMoney(int money) {
 		this.money = money;
 	}
@@ -71,6 +81,6 @@ public class AccountBean {
 	@Override
 	public String toString() {
 		return MyConstants.BANK_NAME + " 계좌정보 [계좌번호=" + accountNo + ", 잔액=" + money + ", 이름=" + name + ", 비밀번호=" + pw
-				+ ", 아이디=" + id + "]";
+				+ ", 아이디=" + id + "]\n";
 	}
 }
