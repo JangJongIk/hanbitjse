@@ -12,7 +12,7 @@ import java.util.Map;
 */
 public class MemberServiceImpl implements MemberService{
 	Map<String, MemberBean> map;
-	MemberBean session;
+	MemberBean session;		// 세션으로 로그인유지. 필드에서 유지해준다
 	
 	public MemberServiceImpl() {
 		map = new HashMap<String, MemberBean>();
