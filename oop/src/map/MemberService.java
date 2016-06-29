@@ -18,6 +18,6 @@ public interface MemberService {
 	public List<MemberBean> list(); // 회원목록
 	public List<MemberBean> findByName(String name); // 이름으로 검색
 	public String delete();	// 탈퇴
-	public List<MemberBean> findByGender(String gender); 	//성별로 찾기
+	public int countByGender(String gender); 	//성별로 회원 수 
 	public int count();	//회원수
 } 

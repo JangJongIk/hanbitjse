@@ -1,5 +1,6 @@
 package map;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +31,7 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	@Override
-	public String login(MemberBean bean) {
+	public String login(MemberBean bean) {                    
 		String result = "";
 		if (map.containsKey(bean.getId())) {
 			if (findById(bean.getId()).getPwd().equals(bean.getPwd())) {
@@ -52,7 +53,12 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public List<MemberBean> list() {
-		return null;
+		List<MemberBean> entryList = new ArrayList<MemberBean>();
+		
+		for(Map.Entry<String, MemberBean> entry : map.entrySet()){
+			entryList.add(entry.getValue());
+		}
+		return entryList;
 	}
 
 	@Override
@@ -62,21 +68,37 @@ public class MemberServiceImpl implements MemberService{
 
 	@Override
 	public List<MemberBean> findByName(String name) {
-		return null;
+		List<MemberBean> temp = new ArrayList<MemberBean>();
+		for (String key : map.keySet()) {
+			if (name.equals(map.get(key).getName())) {
+				temp.add(map.get(key));
+			}
+		}
+		return temp;
 	}
 
 	@Override
 	public void updatePW(MemberBean bean) {
+		session.setPwd(bean.getPwd());
+		map.put(session.getId(), session);
 	}
 
 	@Override
 	public String delete() {
-		return null;
+		map.remove(session.getId());
+		session = null;
+		return "탈퇴완료";
 	}
 
 	@Override
-	public List<MemberBean> findByGender(String gender) {
-		return null;
+	public int countByGender(String gender) {
+		int count = 0;
+		for (String key : map.keySet()) {
+			if (gender.equals(map.get(key).getGender())) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	@Override

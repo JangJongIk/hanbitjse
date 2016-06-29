@@ -30,7 +30,7 @@ public class MemberController {
 				JOptionPane.showMessageDialog(null, service.join(bean));
 				break;
 				
-			case "2":	// 로그인
+			case "2":	// 로그인 
 				temp = JOptionPane.showInputDialog("ID,PW");
 				String[] arr2 = temp.split(",");
 				MemberBean bean2 = new MemberBean();
@@ -44,10 +44,13 @@ public class MemberController {
 				break;
 				
 			case "4":	// 내정보 수정(비번)
+				MemberBean bean3 = new MemberBean();
+				bean3.setPwd(JOptionPane.showInputDialog("비밀번호 변경"));
+				service.updatePW(bean3);
 				break;
 				
 			case "5":	// 탈퇴
-				service.delete();
+				JOptionPane.showMessageDialog(null, service.delete());
 				break;
 				
 			case "11":	// 회원목록
@@ -59,11 +62,13 @@ public class MemberController {
 				break;
 				
 			case "13":	// 검색(이름)
-				service.findByName(temp);
+				String inputName = JOptionPane.showInputDialog("검색할 이름");
+				JOptionPane.showMessageDialog(null, service.findByName(inputName));
 				break;
 				
 			case "14":	// 검색(성별)
-				service.findByGender(temp);
+				String inputGender = JOptionPane.showInputDialog("검색할 성별");
+				JOptionPane.showMessageDialog(null, service.countByGender(inputGender));
 				break;
 				
 			case "15":	// 회원수
